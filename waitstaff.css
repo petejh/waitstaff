@@ -1,0 +1,72 @@
+body {
+  background-color: #293f50;
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.2em;
+}
+
+.container {
+  margin: 5rem auto;
+  padding: 2rem 5rem;
+  max-width: 100rem;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.grid {
+  margin: 0 0 1rem 0;
+}
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col {
+  float: left;
+}
+
+.col2-1 {
+  margin: 0 1.5%;
+  width: 47%;
+}
+
+section {
+  margin: 2rem auto;
+}
+
+.panel {
+  max-width: 40rem;
+  border: 0.3rem solid #000000;
+  border-radius: 6px;
+}
+
+h1 {
+  font-size: 400%;
+  text-align: center;
+  padding: 3rem;
+}
+
+section h1 {
+  font-size: 150%;
+  border-bottom: 0.3rem solid #000000;
+  padding: 1rem;
+  text-align: left;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+}
+
+input[type=currency],
+input[type=number] {
+  width: 100%;
+}
+
+.pull-right {
+  float: right;
+}
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Waiter Earnings Calculator</title>
+
+  <link rel="stylesheet" href="vendor/normalize.css">
+  <link rel="stylesheet" href="waitstaff.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+  <script type="text/javascript" src="waitstaff.js"></script>
+</head>
+
+<body ng-app="WaitstaffCalculator" ng-controller="CalculatorCtrl">
+  <div class="container">
+    <h1>Waitstaff Calculator</h1>
+    <div class="grid">
+      <div class="col col2-1">
+        <section class="panel" ng-controller="MealDetailsCtrl">
+          <h1>Enter the Meal Details</h1>
+          <form name="mealDetailsForm" ng-submit="submit()" novalidate>
+            <div class="grid">
+              <div class="col col2-1">
+                <label for="basePrice">Base Meal Price: $</label>
+                <label for="taxRate">Tax Rate: %</label>
+                <label for="tipPercent">Tip Percentage: %</label>
+              </div>
+              <div class="col col2-1">
+                <input id="basePrice" type="currency" required ng-model="data.basePrice">
+                <input id="taxRate" type="number" required ng-model="data.taxRate">
+                <input id="tipPercent" type="number" required ng-model="data.tipPercent">
+              </div>
+            </div>
+            <div>
+              <!-- error messages div -->
+            </div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Cancel" ng-click="cancel()">
+          <form>
+        </section>
+      </div>
+      <div class="col col2-1">
+        <section class="panel" ng-controller="CustomerChargesCtrl">
+          <h1>Customer Charges</h1>
+          <table>
+            <tr>
+              <td>Subtotal</td>
+              <td>{{ data.subtotal | currency }}</td>
+            </tr>
+            <tr>
+              <td>Tip</td>
+              <td>{{ data.tip | currency}}</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>{{ data.subtotal + data.tip | currency }}</td>
+            </tr>
+          </table>
+        </section>
+        <section class="panel" ng-controller="EarningsInfoCtrl">
+          <h1>My Earnings Info</h1>
+          <table>
+            <tr>
+              <td>Tip Total</td>
+              <td>{{ data.tipTotal | currency }}</td>
+            </tr>
+            <tr>
+              <td>Meal Count</td>
+              <td>{{ data.mealCount}}</td>
+            </tr>
+            <tr>
+              <td>Average Tip Per Meal</td>
+              <td>{{ data.tipTotal / data.mealCount | currency }}</td>
+            </tr>
+          </table>
+        </section>
+      </div>
+    </div>
+    <input type="button" value="Reset" ng-click="resetCalculator()" class="pull-right">
+  </div>
+</body>
+</html>
+
