@@ -1,0 +1,38 @@
+<section class="panel">
+  <h1>Enter the Meal Details</h1>
+  <form name="mealDetailsForm" novalidate ng-submit="submit()">
+    <label for="basePrice">Base Meal Price: $</label>
+    <input id="basePrice" type="text" required ng-model="data.basePrice" ng-class="{ 'has-error': !validCurrency(data.basePrice) }">
+    <br>
+    <label for="taxRate">Tax Rate: %</label>
+    <input id="taxRate" type="text" required ng-model="data.taxRate" ng-class="{ 'has-error': !validPercentage(data.taxRate) }">
+    <br>
+    <label for="tipPercent">Tip Percentage: %</label>
+    <input id="tipPercent" type="text" required ng-model="data.tipPercent" ng-class="{ 'has-error': !validPercentage(data.tipPercent) }">
+    <div>
+      <!-- error messages -->
+    </div>
+    <div class="actions">
+      <input type="submit" value="Submit">
+      <input type="button" value="Cancel" ng-click="cancel()">
+    </div>
+  <form>
+</section>
+<section class="panel">
+  <h1>Customer Charges</h1>
+  <table>
+    <tr>
+      <td class="key">Subtotal</td>
+      <td class="value">{{ charges.subtotal | currency }}</td>
+    </tr>
+    <tr>
+      <td class="key">Tip</td>
+      <td class="value">{{ charges.tip | currency }}</td>
+    </tr>
+    <tr>
+      <td class="key">Total</td>
+      <td class="value">{{ charges.subtotal + charges.tip | currency }}</td>
+    </tr>
+  </table>
+</section>
+

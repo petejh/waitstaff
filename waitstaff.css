@@ -1,44 +1,42 @@
 body {
   background-color: #293f50;
-  font-family: "Lucida Sans", sans-serif;
+  font-family: 'Lucida Sans', sans-serif;
   font-size: 16px;
   line-height: 1.2em;
 }
 
 .container {
-  margin: 5rem auto;
+  margin: 2rem auto;
   padding: 2rem 5rem;
-  max-width: 100rem;
-  background-color: #ffffff;
-  color: #000000;
+  max-width: 60rem;
+  background-color: #fff;
+  color: #000;
 }
 
-.grid {
-  margin: 0 0 1rem 0;
+header {
+  padding-bottom: 1rem;
+  background-color: #cbe2c1;
+  color: #42444e;
 }
 
-.grid:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.col {
-  float: left;
-}
-
-.col2-1 {
-  margin: 0 1.5%;
-  width: 47%;
+nav {
+  text-align: center;
 }
 
 section {
   margin: 2rem auto;
 }
 
+p {
+  display: block;
+  margin: 0 auto;
+  max-width: 25rem;
+  line-height: 1.5em;
+}
+
 .panel {
   max-width: 40rem;
-  border: 0.3rem solid #000000;
+  border: 0.3rem solid #000;
   border-radius: 6px;
 }
 
@@ -50,20 +48,68 @@ h1 {
 
 section h1 {
   font-size: 150%;
-  border-bottom: 0.3rem solid #000000;
+  border-bottom: 0.3rem solid #000;
   padding: 1rem;
   text-align: left;
 }
 
+table {
+  margin: 1rem;
+  table-layout: fixed;
+  width: 100%;
+}
+
+tr {
+  line-height: 1.5em;
+}
+
+td.key {
+  text-align: right;
+  padding-right: 0.5em;
+}
+
+td.value {
+  width: 20%;
+  text-align: left;
+}
+
+form {
+  margin: 1rem;
+  width: 100%;
+}
+
 label {
   display: inline-block;
-  width: 100%;
+  width: 40%;
+  line-height: 1.5em;
+  vertical-align: middle;
+  margin-bottom: 0.3rem;
   text-align: right;
 }
 
-input[type=currency],
-input[type=number] {
-  width: 100%;
+input[type=text] {
+  display: inline-block;
+  width: 40%;
+  line-height: 1.5em;
+  vertical-align: middle;
+  margin-bottom: 0.3rem;
+}
+
+input.has-error {
+  border-color: #f00;
+  border-radius: 3px;
+  box-shadow: 0 0 0.2rem 0.1rem #f00;
+}
+
+.actions {
+  margin: 0 auto;
+  width: 10rem;
+  padding-top: 1rem;
+}
+
+input[type=submit],
+input[type=button] {
+  line-height: 1.5em;
 }
 
 .pull-right {

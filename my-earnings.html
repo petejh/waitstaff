@@ -1,0 +1,19 @@
+<section class="panel">
+  <h1>My Earnings for This Shift</h1>
+  <table>
+    <tr>
+      <td class="key">Tip Total</td>
+      <td class="value">{{ data.tipTotal | currency }}</td>
+    </tr>
+    <tr>
+      <td class="key">Meal Count</td>
+      <td class="value">{{ data.mealCount }}</td>
+    </tr>
+    <tr>
+      <td class="key">Average Tip Per Meal</td>
+      <td class="value">{{ data.tipTotal / data.mealCount | currency }}</td>
+    </tr>
+  </table>
+</section>
+<input type="button" value="Reset" class="pull-right" ng-click="resetCalculator()">
+
