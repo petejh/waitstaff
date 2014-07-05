@@ -1,4 +1,4 @@
-angular.module('WaitstaffCalculator', ['ngRoute'])
+angular.module('WaitstaffCalculator', ['ngRoute', 'ngAnimate'])
 
   .value('earnings', { tipTotal: 0, mealCount: 0 })
 
@@ -13,6 +13,12 @@ angular.module('WaitstaffCalculator', ['ngRoute'])
       controller: 'EarningsCtrl'
     }).otherwise({
       redirectTo: '/'
+    });
+  })
+
+  .run(function($rootScope, $location, $timeout) {
+    $rootScope.$on('$routeChangeError', function() {
+      $location.path('/');
     });
   })
 

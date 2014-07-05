@@ -6,9 +6,6 @@
 
   <link rel="stylesheet" href="vendor/normalize.css">
   <link rel="stylesheet" href="waitstaff.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular-route.js"></script>
-  <script src="waitstaff.js"></script>
 </head>
 
 <body ng-controller="CalculatorCtrl">
@@ -21,8 +18,16 @@
         <a href="#/my-earnings">My Earnings</a>
       </nav>
     </header>
-    <div ng-view=""></div>
+    <div class="animate-view-container">
+      <div class="animate-view" ng-view=""></div>
+    </div>
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular-animate.min.js"></script>
+  <script src="waitstaff.js"></script>
+
 </body>
 </html>
 
